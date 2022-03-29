@@ -6,63 +6,63 @@ public class AllQuestions {
     String QUESTION_1_ANSWER_4 = "George Cosbuc";
     int QUESTION_1_MONEY = 100;
 
-    String QUESTION_2_LEVEL_1 = "In ce domeniu este utilizat sistemul Rhesus:";
+    String QUESTION_2_LEVEL_2 = "In ce domeniu este utilizat sistemul Rhesus:";
     String QUESTION_2_ANSWER_1 = "Sport";
     String QUESTION_2_ANSWER_2 = "Medicina";
     String QUESTION_2_ANSWER_3 = "Arhitectura";
     String QUESTION_2_ANSWER_4 = "Tehonologii informationale";
-    int QUESTION_2_MONEY = 100;
+    int QUESTION_2_MONEY = 250;
 
-    String QUESTION_3_LEVEL_2 = "Care din urmatoarele animale inghite prada intreaga: ";
+    String QUESTION_3_LEVEL_3 = "Care din urmatoarele animale inghite prada intreaga: ";
     String QUESTION_3_ANSWER_1 = "Sarpele";
     String QUESTION_3_ANSWER_2 = "Hiena";
     String QUESTION_3_ANSWER_3 = "Ghepardul";
     String QUESTION_3_ANSWER_4 = "Leul";
     int QUESTION_3_MONEY = 500;
 
-    String QUESTION_4_LEVEL_2 = "Care este capitala Australiei: ";
+    String QUESTION_4_LEVEL_4 = "Care este capitala Australiei: ";
     String QUESTION_4_ANSWER_1 = "Brest";
     String QUESTION_4_ANSWER_2 = "Melbourne";
     String QUESTION_4_ANSWER_3 = "Canberra";
     String QUESTION_4_ANSWER_4 = "Sydney";
-    int QUESTION_4_MONEY = 500;
+    int QUESTION_4_MONEY = 750;
 
-    String QUESTION_5_LEVEL_3 = "Unde strang albinutele polenul: ";
+    String QUESTION_5_LEVEL_5 = "Unde strang albinutele polenul: ";
     String QUESTION_5_ANSWER_1 = "In cos";
     String QUESTION_5_ANSWER_2 = "Sub aripi";
     String QUESTION_5_ANSWER_3 = "Pe picioarele posterioare";
     String QUESTION_5_ANSWER_4 = "In urechea interna";
-    int QUESTION_5_MONEY = 1500;
+    int QUESTION_5_MONEY = 1000;
 
-    String QUESTION_6_LEVEL_3 = "Unde locuiesc Papuasii:";
+    String QUESTION_6_LEVEL_6 = "Unde locuiesc Papuasii:";
     String QUESTION_6_ANSWER_1 = "India";
     String QUESTION_6_ANSWER_2 = "Birmania";
     String QUESTION_6_ANSWER_3 = "Etiopia";
     String QUESTION_6_ANSWER_4 = "Noua Guinee";
     int QUESTION_6_MONEY = 1500;
 
-    String QUESTION_7_LEVEL_4 = "Care este semnificatia expresiei 'Ok' : ";
+    String QUESTION_7_LEVEL_7 = "Care este semnificatia expresiei 'Ok' : ";
     String QUESTION_7_ANSWER_1 = "it right";
     String QUESTION_7_ANSWER_2 = "0 killed";
     String QUESTION_7_ANSWER_3 = "on keep";
     String QUESTION_7_ANSWER_4 = "one key";
-    int QUESTION_7_MONEY = 3000;
+    int QUESTION_7_MONEY = 2000;
 
-    String QUESTION_8_LEVEL_4 = "Care din urmatoarele variante era numele de domnisoara al chimistei Marie Curie:";
+    String QUESTION_8_LEVEL_8 = "Care din urmatoarele variante era numele de domnisoara al chimistei Marie Curie:";
     String QUESTION_8_ANSWER_1 = "Butlerov";
     String QUESTION_8_ANSWER_2 = "Schmidt";
     String QUESTION_8_ANSWER_3 = "Sklodowska";
     String QUESTION_8_ANSWER_4 = "Dupond";
-    int QUESTION_8_MONEY = 3000;
+    int QUESTION_8_MONEY = 2500;
 
-    String QUESTION_9_LEVEL_5 = "Cum se numeste calul lui Alexandru cel Mare, tovaras de lupta inmormantat cu onoruri militare:";
+    String QUESTION_9_LEVEL_9 = "Cum se numeste calul lui Alexandru cel Mare, tovaras de lupta inmormantat cu onoruri militare:";
     String QUESTION_9_ANSWER_1 = "Marugo";
     String QUESTION_9_ANSWER_2 = "Pegas";
     String QUESTION_9_ANSWER_3 = "Incitatus";
     String QUESTION_9_ANSWER_4 = "Bucifal";
-    int QUESTION_9_MONEY = 5000;
+    int QUESTION_9_MONEY = 4000;
 
-    String QUESTION_10_LEVEL_5 = "Unde se afla glanda parotida:";
+    String QUESTION_10_LEVEL_10 = "Unde se afla glanda parotida:";
     String QUESTION_10_ANSWER_1 = "La nivelul capului";
     String QUESTION_10_ANSWER_2 = "La o palma sub ficat";
     String QUESTION_10_ANSWER_3 = "La genunchi";
@@ -70,17 +70,29 @@ public class AllQuestions {
     int QUESTION_10_MONEY = 5000;
 
 
-    Question QUESTION_1 = new Question("Cine a scris poezia:'Fiind baiet, paduri cutreieram':", 1,100);
-    Question QUESTION_2 = new Question("In ce domeniu este utilizat sistemul Rhesus:", 1,100);
-    Question QUESTION_3 = new Question("Care din urmatoarele animale inghite prada intreaga: ", 2,500);
-    Question QUESTION_4 = new Question("Care este capitala Australiei:", 2,500);
-    Question QUESTION_5 = new Question("Unde strang albinutele polenul:", 3,1500);
-    Question QUESTION_6 = new Question("Unde locuiesc Papuasii:", 3,1500);
-    Question QUESTION_7 = new Question("Care este semnificatia expresiei 'Ok' :", 4,3000);
-    Question QUESTION_8 = new Question("Care din urmatoarele variante era numele de domnisoara al chimistei Marie Curie:", 4,3000);
-    Question QUESTION_9 = new Question("Cum se numeste calul lui Alexandru cel Mare, tovaras de lupta inmormantat cu onoruri militare:", 5,5000);
-    Question QUESTION_10 = new Question("Unde se afla glanda parotida:", 5,5000);
+    Question QUESTION_1;
+    Question QUESTION_2;
+    Question QUESTION_3;
+    Question QUESTION_4;
+    Question QUESTION_5;
+    Question QUESTION_6;
+    Question QUESTION_7;
+    Question QUESTION_8;
+    Question QUESTION_9;
+    Question QUESTION_10;
 
+    public AllQuestions() {
+        QUESTION_1 = new Question("Cine a scris poezia:'Fiind baiet, paduri cutreieram':",1,100,question1Answer1, question1Answer2, question1Answer3, question1Answer4 );
+        QUESTION_2 = new Question("In ce domeniu este utilizat sistemul Rhesus:", 2,250, question2Answer1, question2Answer2, question2Answer3, question2Answer4 );
+        QUESTION_3 = new Question("Care din urmatoarele animale inghite prada intreaga: ", 3,500,question3Answer1, question3Answer2, question3Answer3, question3Answer4 );
+        QUESTION_4 = new Question("Care este capitala Australiei:", 4,750, question4Answer1, question4Answer2, question4Answer3, question4Answer4);
+        QUESTION_5 = new Question("Unde strang albinutele polenul:", 5,1000, question5Answer1, question5Answer2, question5Answer3, question5Answer4);
+        QUESTION_6 = new Question("Unde locuiesc Papuasii:", 6,1500, question6Answer1, question6Answer2, question6Answer3, question6Answer4);
+        QUESTION_7 = new Question("Care este semnificatia expresiei 'Ok' :", 7,2000, question7Answer1, question7Answer2, question7Answer3, question7Answer4);
+        QUESTION_8 = new Question("Care din urmatoarele variante era numele de domnisoara al chimistei Marie Curie:", 8,2500, question8Answer1, question8Answer2, question8Answer3, question8Answer4);
+        QUESTION_9 = new Question("Cum se numeste calul lui Alexandru cel Mare, tovaras de lupta inmormantat cu onoruri militare:", 9,4000, question9Answer1, question9Answer2, question9Answer3, question9Answer4);
+        QUESTION_10 = new Question("Unde se afla glanda parotida:", 10,5000, question10Answer1, question10Answer2, question10Answer3, question10Answer4);
+    }
     Answer question1Answer1 = new Answer("George Enescu", false, "a");
     Answer question1Answer2 = new Answer("Mihai Eminescu", true, "b");
     Answer question1Answer3 = new Answer("Alexandru Donici", false, "c");
@@ -130,5 +142,6 @@ public class AllQuestions {
     Answer question10Answer2 = new Answer("La o palma sub ficat", false, "b");
     Answer question10Answer3 = new Answer("La genunchi", false, "c");
     Answer question10Answer4 = new Answer("La spate", false, "d");
+
 
 }
