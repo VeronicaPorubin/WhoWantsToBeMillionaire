@@ -1,13 +1,28 @@
 public class Answer {
     private String answer;
     private boolean isCorrect;
-     private String correctAnswer;
+     private String option;
 
-    public Answer(String answer, boolean isCorrect, String correctAnswer) {
+    public Answer(String answer, boolean isCorrect, String option) {
         this.answer = answer;
         this.isCorrect = isCorrect;
-        this.correctAnswer = correctAnswer;
+        this.option = option;
     }
+
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public boolean isCorrect() {
+        return isCorrect;
+    }
+
+    public String getOption() {
+        return option;
+    }
+
+
 
 
 }
