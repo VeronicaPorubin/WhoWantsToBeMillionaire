@@ -7,7 +7,21 @@ public class Question {
     Answer answerTwo;
     Answer answerThree;
     Answer answerFour;
+    Answer answer [] = new Answer[4];
 
+    public Question(String question, int level, int score, Answer[] answer) {
+        this.question = question;
+        this.level = level;
+        this.score = score;
+        this.answer = answer;
+    }
+
+    public void setQuestion(String question) {this.question = question;}
+
+    public Answer[] getAnswer() {
+        return answer;}
+
+    public void setAnswer(Answer[] answer) {this.answer = answer;}
 
     public String getQuestion() {
         return question;
@@ -65,16 +79,7 @@ public class Question {
         this.answerFour = answerFour;
     }
 
-    public Question(String question, int level, int score, Answer answerOne, Answer answerTwo, Answer answerThree, Answer answerFour) {
-        this.question = question;
-        this.level = level;
-        this.score = score;
-        this.answerOne = answerOne;
-        this.answerTwo = answerTwo;
-        this.answerThree = answerThree;
-        this.answerFour = answerFour;
-    }
 
-
+    //  public Answer[] getAnswer() {return new Answer[0];}
 }
 

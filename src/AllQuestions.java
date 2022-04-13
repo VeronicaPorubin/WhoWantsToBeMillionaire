@@ -82,16 +82,16 @@ public class AllQuestions {
     Question QUESTION_10;
 
     public AllQuestions() {
-        QUESTION_1 = new Question("Cine a scris poezia:'Fiind baiet, paduri cutreieram':",1,100,question1Answer1, question1Answer2, question1Answer3, question1Answer4 );
-        QUESTION_2 = new Question("In ce domeniu este utilizat sistemul Rhesus:", 2,250, question2Answer1, question2Answer2, question2Answer3, question2Answer4 );
-        QUESTION_3 = new Question("Care din urmatoarele animale inghite prada intreaga: ", 3,500,question3Answer1, question3Answer2, question3Answer3, question3Answer4 );
-        QUESTION_4 = new Question("Care este capitala Australiei:", 4,750, question4Answer1, question4Answer2, question4Answer3, question4Answer4);
-        QUESTION_5 = new Question("Unde strang albinutele polenul:", 5,1000, question5Answer1, question5Answer2, question5Answer3, question5Answer4);
-        QUESTION_6 = new Question("Unde locuiesc Papuasii:", 6,1500, question6Answer1, question6Answer2, question6Answer3, question6Answer4);
-        QUESTION_7 = new Question("Care este semnificatia expresiei 'Ok' :", 7,2000, question7Answer1, question7Answer2, question7Answer3, question7Answer4);
-        QUESTION_8 = new Question("Care din urmatoarele variante era numele de domnisoara al chimistei Marie Curie:", 8,2500, question8Answer1, question8Answer2, question8Answer3, question8Answer4);
-        QUESTION_9 = new Question("Cum se numeste calul lui Alexandru cel Mare, tovaras de lupta inmormantat cu onoruri militare:", 9,4000, question9Answer1, question9Answer2, question9Answer3, question9Answer4);
-        QUESTION_10 = new Question("Unde se afla glanda parotida:", 10,5000, question10Answer1, question10Answer2, question10Answer3, question10Answer4);
+        QUESTION_1 = new Question("Cine a scris poezia:'Fiind baiet, paduri cutreieram':",1,100, new Answer[]{question1Answer1, question1Answer2, question1Answer3, question1Answer4} );
+        QUESTION_2 = new Question("In ce domeniu este utilizat sistemul Rhesus:", 2,250, new Answer[]{question2Answer1, question2Answer2, question2Answer3, question2Answer4} );
+        QUESTION_3 = new Question("Care din urmatoarele animale inghite prada intreaga: ", 3,500, new Answer[]{question3Answer1, question3Answer2, question3Answer3, question3Answer4} );
+        QUESTION_4 = new Question("Care este capitala Australiei:", 4,750, new Answer[]{question4Answer1, question4Answer2, question4Answer3, question4Answer4});
+        QUESTION_5 = new Question("Unde strang albinutele polenul:", 5,1000, new Answer[]{question5Answer1, question5Answer2, question5Answer3, question5Answer4});
+        QUESTION_6 = new Question("Unde locuiesc Papuasii:", 6,1500, new Answer[]{question6Answer1, question6Answer2, question6Answer3, question6Answer4});
+        QUESTION_7 = new Question("Care este semnificatia expresiei 'Ok' :", 7,2000, new Answer[]{question7Answer1, question7Answer2, question7Answer3, question7Answer4});
+        QUESTION_8 = new Question("Care din urmatoarele variante era numele de domnisoara al chimistei Marie Curie:", 8,2500, new Answer[]{question8Answer1, question8Answer2, question8Answer3, question8Answer4});
+        QUESTION_9 = new Question("Cum se numeste calul lui Alexandru cel Mare, tovaras de lupta inmormantat cu onoruri militare:", 9,4000, new Answer[]{question9Answer1, question9Answer2, question9Answer3, question9Answer4});
+        QUESTION_10 = new Question("Unde se afla glanda parotida:", 10,5000, new Answer[]{question10Answer1, question10Answer2, question10Answer3, question10Answer4});
     }
     Answer question1Answer1 = new Answer("George Enescu", false, "a");
     Answer question1Answer2 = new Answer("Mihai Eminescu", true, "b");
