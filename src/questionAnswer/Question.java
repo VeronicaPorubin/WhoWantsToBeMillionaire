@@ -1,3 +1,4 @@
+package questionAnswer;
 
 public class Question {
     private String question;
@@ -80,6 +81,10 @@ public class Question {
     }
 
 
-    //  public Answer[] getAnswer() {return new Answer[0];}
+    //  public questionAnswer.Answer[] getAnswer() {return new questionAnswer.Answer[0];}
+
+public  Answer getCorrectAnswer (){ return getCorrectAnswer();}
+
+    public Answer [] getWrongAnswers () {return getWrongAnswers();}
 }
 

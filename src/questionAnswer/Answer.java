@@ -1,10 +1,12 @@
+package questionAnswer;
+
 public class Answer {
     private String answer;
     private boolean isCorrect;
-     private String option;
+     private AnswerSequence option;
 
 
-    public Answer(String answer, boolean isCorrect, String option) {
+    public Answer(String answer, boolean isCorrect, AnswerSequence option) {
         this.answer = answer;
         this.isCorrect = isCorrect;
         this.option = option;
@@ -17,7 +19,7 @@ public class Answer {
         isCorrect = correct;
     }
 
-    public void setOption(String option) {
+    public void setOption(AnswerSequence option) {
         this.option = option;
     }
 
@@ -25,9 +27,12 @@ public class Answer {
 
     public boolean isCorrect() {return isCorrect;}
 
-    public String getOption() {return option;}
+    public AnswerSequence getOption() {return option;}
 
+public enum AnswerSequence {
+        A, B, C, D
 
+}
 
 
 }
