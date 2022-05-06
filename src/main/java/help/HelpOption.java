@@ -1,6 +1,6 @@
-package main.java.help;
+package help;
 
-import main.java.questionAnswer.Question;
+import questionAnswer.Question;
 
 
 abstract class HelpOption {

@@ -1,6 +1,7 @@
-package main.java.help;
+package help;
 
-import main.java.questionAnswer.Question;
+
+import questionAnswer.Question;
 
 public class AudienceHelp extends HelpOption {
 

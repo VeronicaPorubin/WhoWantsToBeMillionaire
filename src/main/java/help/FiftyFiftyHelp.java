@@ -1,6 +1,7 @@
-package main.java.help;
+package help;
 
-import main.java.questionAnswer.Question;
+import questionAnswer.AnswerSequence;
+import questionAnswer.Question;
 
 import java.util.Random;
 

@@ -1,4 +1,7 @@
-package main.java.questionAnswer;
+package questionAnswer;
+
+import questionAnswer.Answer;
+import questionAnswer.AnswerSequence;
 
 public class Question {
     private String question;

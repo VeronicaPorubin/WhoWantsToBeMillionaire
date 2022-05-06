@@ -1,4 +1,4 @@
-package main.java.questionAnswer;
+package questionAnswer;
 
 public class Answer {
     private String answer;

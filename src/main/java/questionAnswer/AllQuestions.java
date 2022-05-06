@@ -1,4 +1,4 @@
-package main.java.questionAnswer;
+package questionAnswer;
 
 public class AllQuestions {
     String QUESTION_1_LEVEL_1 = "Cine a scris poezia:'Fiind baiet, paduri cutreieram': ";

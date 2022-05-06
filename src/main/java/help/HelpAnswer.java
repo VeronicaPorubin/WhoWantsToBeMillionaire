@@ -1,6 +1,6 @@
-package main.java.help;
+package help;
 
-import main.java.questionAnswer.Answer;
+import questionAnswer.Answer;
 
 public class HelpAnswer {
    Answer answers;

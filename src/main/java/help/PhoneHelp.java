@@ -1,8 +1,8 @@
-package main.java.help;
+package help;
 
-import main.java.questionAnswer.Question;
+import questionAnswer.Question;
 
-public class PhoneHelp extends HelpOption{
+public class PhoneHelp extends HelpOption {
 
     @Override
     HelpAnswer[] getHelpAnswers(Question question) {

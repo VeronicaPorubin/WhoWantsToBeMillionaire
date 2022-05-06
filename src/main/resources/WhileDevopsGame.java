@@ -1,9 +1,6 @@
-package main;
-
-
-import main.java.questionAnswer.Answer;
-import main.java.questionAnswer.AnswerSequence;
-import main.java.questionAnswer.Question;
+import questionAnswer.Answer;
+import questionAnswer.AnswerSequence;
+import questionAnswer.Question;
 
 import java.util.Scanner;
 
