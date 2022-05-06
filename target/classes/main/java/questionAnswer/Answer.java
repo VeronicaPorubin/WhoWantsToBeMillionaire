@@ -1,9 +1,9 @@
-package questionAnswer;
+package main.java.questionAnswer;
 
 public class Answer {
     private String answer;
     private boolean isCorrect;
-     private AnswerSequence option;
+    AnswerSequence option;
 
 
     public Answer(String answer, boolean isCorrect, AnswerSequence option) {
@@ -11,6 +11,7 @@ public class Answer {
         this.isCorrect = isCorrect;
         this.option = option;
     }
+
     public void setAnswer(String answer) {
         this.answer = answer;
     }
@@ -29,10 +30,8 @@ public class Answer {
 
     public AnswerSequence getOption() {return option;}
 
-public enum AnswerSequence {
-        A, B, C, D
 
-}
+
 
 
 }
