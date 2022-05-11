@@ -1,7 +1,6 @@
 package questionAnswer;
 
-import questionAnswer.Answer;
-import questionAnswer.AnswerSequence;
+import enums.AnswerSequence;
 
 public class Question {
     private String question;
@@ -57,23 +56,35 @@ public class Question {
 
 
 public Answer getVerifyAns (AnswerSequence answerSequence){
+        Answer gameAnswer=null;
         for(Answer ansVerify : answers){
-            if (ansVerify.isCorrect()){}
+            if (ansVerify.getOption().equals(answerSequence)){
+                gameAnswer =ansVerify;
+            }
         }
-        return getVerifyAns(answerSequence);
+        return gameAnswer;
 }
 
 
     public Answer getCorrectAnswer() {
+        Answer correctAnswer =null;
         for (Answer ans: answers){
-        if (getCorrectAnswer().isCorrect()) {
-            System.out.println("");}
+        if (ans.isCorrect()) {
+            return ans;}
         }
-        return getCorrectAnswer();
+        return correctAnswer;
     }
 
     public Answer[] getWrongAnswers() {
-        return getWrongAnswers();
+        Answer [] wrongAnswers = new Answer[3];
+        int i =0;
+        for (Answer ansWrong: answers){
+            if (!ansWrong.isCorrect()){
+                wrongAnswers [i] =ansWrong;
+                i++;
+            }
+        }
+        return new Answer [0];
     }
 
 

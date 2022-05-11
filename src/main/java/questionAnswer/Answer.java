@@ -1,10 +1,21 @@
 package questionAnswer;
 
+import enums.AnswerSequence;
+import enums.HelpSequence;
+
 public class Answer {
     private String answer;
     private boolean isCorrect;
-    AnswerSequence option;
+    private AnswerSequence option;
+    private HelpSequence helpsOption;
 
+    public HelpSequence getHelpsOption() {
+        return helpsOption;
+    }
+
+    public void setHelpsOption(HelpSequence helpsOption) {
+        this.helpsOption = helpsOption;
+    }
 
     public Answer(String answer, boolean isCorrect, AnswerSequence option) {
         this.answer = answer;

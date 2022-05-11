@@ -1,5 +1,7 @@
 package questionAnswer;
 
+import enums.AnswerSequence;
+
 public class AllQuestions {
     String QUESTION_1_LEVEL_1 = "Cine a scris poezia:'Fiind baiet, paduri cutreieram': ";
     String QUESTION_1_ANSWER_1 = "George Enescu";

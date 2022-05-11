@@ -6,7 +6,7 @@ import questionAnswer.Question;
 public class AudienceHelp extends HelpOption {
 
     @Override
-    HelpAnswer[] getHelpAnswers(Question question) {
+  public  HelpAnswer[] getHelpAnswers(Question question) {
         HelpAnswer[] helpAnswers = new HelpAnswer[4];
         helpAnswers [0] = new HelpAnswer(question.getCorrectAnswer(), 42.2);
         helpAnswers [1] = new HelpAnswer(question.getWrongAnswers()[0], 10.5);

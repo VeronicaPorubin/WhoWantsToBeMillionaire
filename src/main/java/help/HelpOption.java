@@ -7,6 +7,6 @@ abstract class HelpOption {
     private boolean isUsed;
 
 
-  abstract   HelpAnswer[] getHelpAnswers (Question question) ;
+   abstract HelpAnswer[] getHelpAnswers (Question question) ;
 
 }

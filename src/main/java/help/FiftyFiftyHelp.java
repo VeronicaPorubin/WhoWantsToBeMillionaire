@@ -1,6 +1,5 @@
 package help;
 
-import questionAnswer.AnswerSequence;
 import questionAnswer.Question;
 
 import java.util.Random;
@@ -11,10 +10,11 @@ public class FiftyFiftyHelp extends HelpOption {
     int n = random.nextInt();
 
     @Override
-    HelpAnswer[] getHelpAnswers(Question question) {
+  public  HelpAnswer[] getHelpAnswers(Question question) {
         HelpAnswer[] helpAnswers = new HelpAnswer[2];
         helpAnswers[0] = new HelpAnswer(question.getCorrectAnswer(), 50.0);
         helpAnswers[1] = new HelpAnswer(question.getWrongAnswers()[n], 50.0);
         return new HelpAnswer[2];
     }
+
 }
