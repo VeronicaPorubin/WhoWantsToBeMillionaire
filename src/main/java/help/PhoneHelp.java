@@ -2,14 +2,24 @@ package help;
 
 import questionAnswer.Question;
 
-public class PhoneHelp extends HelpOption {
-    @Override
-  public  HelpAnswer[] getHelpAnswers(Question question) {
-        HelpAnswer[] helpAnswers = new HelpAnswer[1];
-        helpAnswers [0] = new HelpAnswer(question.getCorrectAnswer(), 99.9);
-     //   System.out.println(helpAnswers [0]);
-        return new HelpAnswer[1];
-    }
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+public class PhoneHelp extends HelpOption {
+
+
+    @Override
+  public List<HelpAnswer> getHelpAnswers(Question question) {
+        List<HelpAnswer> helpAnswers = new ArrayList<>();
+        helpAnswers.add(new HelpAnswer(question.getCorrectAnswer(), 99.9));
+        System.out.println(helpAnswers);
+        return helpAnswers;
+    }
+@Override
+public void showAnswer (List<HelpAnswer> helpAnswer){
+        for (HelpAnswer helpAns: helpAnswer){
+    System.out.println(helpAns.getAnswers().getOption() + ": " + helpAns.getAnswers().getAnswer() + "--->" + helpAns.getProbability() + "%");}
+}
 
 }

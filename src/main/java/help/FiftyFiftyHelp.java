@@ -1,20 +1,37 @@
 package help;
 
+import questionAnswer.Answer;
 import questionAnswer.Question;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class FiftyFiftyHelp extends HelpOption {
 
     Random random = new Random();
-    int n = random.nextInt();
-
     @Override
-  public  HelpAnswer[] getHelpAnswers(Question question) {
-        HelpAnswer[] helpAnswers = new HelpAnswer[2];
-        helpAnswers[0] = new HelpAnswer(question.getCorrectAnswer(), 50.0);
-        helpAnswers[1] = new HelpAnswer(question.getWrongAnswers()[n], 50.0);
-        return new HelpAnswer[2];
+    public void showAnswer (List<HelpAnswer> helpAnswer){
+        for (HelpAnswer helpAns: helpAnswer){
+            System.out.println(helpAns.getAnswers().getOption() + ": " + helpAns.getAnswers().getAnswer() + "--->" + helpAns.getProbability() + "%");}
     }
+    @Override
+  public List<HelpAnswer> getHelpAnswers(Question question) {
+        List<HelpAnswer> helpAnswers = new ArrayList<>();
+        helpAnswers.add(new HelpAnswer(question.getCorrectAnswer(), 50.0));
+        helpAnswers.add(new HelpAnswer((Answer) question.getWrongAnswers(), 50.0));
+
+        return helpAnswers;
+    }
+    public List<Integer> randomWrongAnswer (){
+        Question question=null;
+        List<Integer> wrongAnswer = new ArrayList<>();
+        for (int i =0; i<question.getWrongAnswers().size(); i++){
+            wrongAnswer.set(i, random.nextInt());
+        }
+       return wrongAnswer;
+    }
+
 
 }

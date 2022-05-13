@@ -1,10 +1,14 @@
 package help;
 
 import questionAnswer.Answer;
+import questionAnswer.Question;
+
+import java.util.Random;
 
 public class HelpAnswer {
-   Answer answers;
+   private Answer answers;
    private double probability;
+
 
    public Answer getAnswers() {
       return answers;
@@ -25,5 +29,8 @@ public class HelpAnswer {
       this.probability = probability;
    }
 
+   public static int getRandomIndex(Question question, Random random) {
+      return random.nextInt(question.getWrongAnswers().size() - 1);
+   }
 
 }

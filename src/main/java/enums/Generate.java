@@ -25,6 +25,4 @@ public class Generate {
         this.helpSequence = helpSequence;
     }
 
-
-
-}
+    }

@@ -2,18 +2,20 @@ package questionAnswer;
 
 import enums.AnswerSequence;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Question {
     private String question;
     private int level;
     private int score;
-    Answer answers[];
+   List <Answer> answers;
 
-
-    public Question(String question, int level, int score, Answer[] answer) {
+    public Question(String question, int level, int score, List <Answer> answers) {
         this.question = question;
         this.level = level;
         this.score = score;
-        this.answers = answer;
+        this.answers = answers;
 
     }
 
@@ -22,12 +24,12 @@ public class Question {
         this.question = question;
     }
 
-    public Answer[] getAnswer() {
+    public List <Answer> getAnswer() {
         return answers;
     }
 
-    public void setAnswer(Answer[] answer) {
-        this.answers = answer;
+    public void setAnswer(List<Answer> answers) {
+        this.answers = answers;
     }
 
     public String getQuestion() {
@@ -75,16 +77,16 @@ public Answer getVerifyAns (AnswerSequence answerSequence){
         return correctAnswer;
     }
 
-    public Answer[] getWrongAnswers() {
-        Answer [] wrongAnswers = new Answer[3];
+    public List<Answer> getWrongAnswers() {
+        List<Answer> wrongAnswers = new ArrayList<>();
         int i =0;
         for (Answer ansWrong: answers){
             if (!ansWrong.isCorrect()){
-                wrongAnswers [i] =ansWrong;
+                wrongAnswers.set(i, ansWrong);
                 i++;
             }
         }
-        return new Answer [0];
+        return wrongAnswers;
     }
 
 
