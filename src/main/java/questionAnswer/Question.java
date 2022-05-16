@@ -1,5 +1,7 @@
 package questionAnswer;
 
+import Exception.InvalidLevelException;
+import Exception.InvalidScoreException;
 import enums.AnswerSequence;
 
 import java.util.ArrayList;
@@ -9,22 +11,28 @@ public class Question {
     private String question;
     private int level;
     private int score;
-   List <Answer> answers;
+    List<Answer> answers;
 
-    public Question(String question, int level, int score, List <Answer> answers) {
+    public Question(String question, int level, int score, List<Answer> answers) throws InvalidLevelException, InvalidScoreException {
         this.question = question;
         this.level = level;
+        if (level < 0 || level > 10) {
+            throw new InvalidLevelException("Level value must be greater than 0 and less than 15");
+        }
         this.score = score;
+        if (score < 0) {
+            throw new InvalidScoreException("Score value must be greater than 0");
+        }
         this.answers = answers;
-
     }
+
 
 
     public void setQuestion(String question) {
         this.question = question;
     }
 
-    public List <Answer> getAnswer() {
+    public List<Answer> getAnswer() {
         return answers;
     }
 
@@ -57,32 +65,33 @@ public class Question {
     }
 
 
-public Answer getVerifyAns (AnswerSequence answerSequence){
-        Answer gameAnswer=null;
-        for(Answer ansVerify : answers){
-            if (ansVerify.getOption().equals(answerSequence)){
-                gameAnswer =ansVerify;
+    public Answer getVerifyAns(AnswerSequence answerSequence) {
+        Answer gameAnswer = null;
+        for (Answer ansVerify : answers) {
+            if (ansVerify.getOption().equals(answerSequence)) {
+                gameAnswer = ansVerify;
             }
         }
         return gameAnswer;
-}
+    }
 
 
     public Answer getCorrectAnswer() {
-        Answer correctAnswer =null;
-        for (Answer ans: answers){
-        if (ans.isCorrect()) {
-            return ans;}
+        Answer correctAnswer = null;
+        for (Answer ans : answers) {
+            if (ans.isCorrect()) {
+                return ans;
+            }
         }
         return correctAnswer;
     }
 
     public List<Answer> getWrongAnswers() {
         List<Answer> wrongAnswers = new ArrayList<>();
-        int i =0;
-        for (Answer ansWrong: answers){
-            if (!ansWrong.isCorrect()){
-                wrongAnswers.set(i, ansWrong);
+        int i = 0;
+        for (Answer ansWrong : answers) {
+            if (!ansWrong.isCorrect()) {
+                wrongAnswers.add(i, ansWrong);
                 i++;
             }
         }

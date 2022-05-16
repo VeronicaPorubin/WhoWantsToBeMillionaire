@@ -1,5 +1,6 @@
 package main;
-
+import Exception.InvalidLevelException;
+import Exception.InvalidScoreException;
 import enums.HelpSequence;
 import help.*;
 import questionAnswer.Answer;
@@ -11,7 +12,7 @@ import java.util.*;
 public class WhileDevopsGame {
     List<Question> allQuestions;
 
-    public void startGame() {
+    public void startGame() throws InvalidLevelException, InvalidScoreException {
         allQuestions = initQuestion();
         Scanner sc = new Scanner(System.in);
         boolean answer = true;
@@ -22,6 +23,7 @@ public class WhileDevopsGame {
         HelpOption audienceHelp = new AudienceHelp();
         HelpOption phoneHelp = new PhoneHelp();
         List<HelpOption> helpOptions = Arrays.asList(fiftyfiftyHelp, audienceHelp, phoneHelp);
+
 
         while (answer && level <= 10) {
             System.out.println("Nivelul: " + level);
@@ -39,39 +41,49 @@ public class WhileDevopsGame {
                     HelpSequence optionHelp = HelpSequence.valueOf(gamerAnswer.toUpperCase());
                     switch (optionHelp) {
                         case P:
-                            System.out.println("Ai ales optiunea sa suni un prieten");
-                            phoneHelp.getHelpAnswers(question);
-
+                            if (!phoneHelp.isUsed()) {
+                                System.out.println("Ai ales optiunea sa suni un prieten");
+                                phoneHelp.showAnswer(phoneHelp.getHelpAnswers(question));
+                                phoneHelp.setUsed(true);
+                            } else {
+                                System.out.println("Ai folosit aceasta optiune!");
+                                phoneHelp.setUsed(false);
+                            }
                             break;
                         case F:
-                            System.out.println("Ai ales optiunea 50/50");
-                            fiftyfiftyHelp.showAnswer();
-
+                            if (!fiftyfiftyHelp.isUsed()) {
+                                System.out.println("Ai ales optiunea 50/50");
+                                fiftyfiftyHelp.showAnswer(fiftyfiftyHelp.getHelpAnswers(question));
+                                fiftyfiftyHelp.setUsed(true);
+                            } else {
+                                System.out.println("Ai folosit aceasta optiune!");
+                                phoneHelp.setUsed(false);
+                            }
                             break;
                         case U:
-                            System.out.println("Ai ales optiunea ajutorul salii");
-                            audienceHelp.showAnswer();
-                            break;
-                        default:
-                            for (HelpOption helpFinish : helpOptions) {
-                                if (!helpFinish.isUsed()) {
-                                    System.out.println("Ai folosit toate optiunele");
-                                }
+                            if (!audienceHelp.isUsed()) {
+                                System.out.println("Ai ales optiunea ajutorul salii");
+                                audienceHelp.showAnswer(audienceHelp.getHelpAnswers(question));
+                                audienceHelp.setUsed(true);
+                            } else {
+                                System.out.println("Ai folosit aceasta optiune!");
+                                phoneHelp.setUsed(false);
                             }
+                            break;
                     }
-                    continue;
-                } else if (isValidationAnswer(gamerAnswer)) {
-                    AnswerSequence gamesAnswers = AnswerSequence.valueOf(gamerAnswer.toUpperCase());
-                    Answer returnedAnswer = question.getVerifyAns(gamesAnswers);
-                    if (returnedAnswer.isCorrect()) {
-                        System.out.println("Is correct: ");
-                        totalScore += question.getScore();
-                        System.out.println("Score: " + totalScore);
-                    } else {
-                        System.out.println("Is not correct!");
-                        System.out.println("Final score: " + totalScore);
-                        answer = false;
-                    }
+                    System.out.println("Alegerea ta este: ");
+                    gamerAnswer = sc.nextLine();
+                }
+                AnswerSequence gamesAnswers = AnswerSequence.valueOf(gamerAnswer.toUpperCase());
+                Answer returnedAnswer = question.getVerifyAns(gamesAnswers);
+                if (returnedAnswer.isCorrect()) {
+                    System.out.println("Is correct: ");
+                    totalScore += question.getScore();
+                    System.out.println("Score: " + totalScore);
+                } else {
+                    System.out.println("Is not correct!");
+                    System.out.println("Final score: " + totalScore);
+                    answer = false;
                 }
             } else {
                 System.out.println("Nu ai introdus optiunea corecta!");
@@ -105,7 +117,7 @@ public class WhileDevopsGame {
         return false;
     }
 
-    public Question getQuestionByLevel(int level) {
+    public Question getQuestionByLevel(int level) throws InvalidLevelException, InvalidScoreException {
         Question question = null;
         List<Question> allQuestions = initQuestion();
         for (Question question1 : allQuestions) {
@@ -117,7 +129,7 @@ public class WhileDevopsGame {
         return question;
     }
 
-    private List<Question> initQuestion() {
+    private List<Question> initQuestion() throws InvalidLevelException, InvalidScoreException {
 
         List<Question> questions = new ArrayList<>();
         Answer question1Answer1 = new Answer("George Enescu", false, AnswerSequence.A);

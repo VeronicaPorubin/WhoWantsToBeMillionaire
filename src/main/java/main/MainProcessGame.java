@@ -1,11 +1,11 @@
 package main;
 
+import Exception.InvalidScoreException;
+import Exception.InvalidLevelException;
 
-import help.PhoneHelp;
-import main.WhileDevopsGame;
 
 public class MainProcessGame {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidLevelException, InvalidScoreException {
         System.out.println("------Cine vrea sa devina MILIONAR?!------");
         System.out.println();
         WhileDevopsGame devopsGame = new WhileDevopsGame();

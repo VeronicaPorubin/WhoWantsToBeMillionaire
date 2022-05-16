@@ -7,14 +7,19 @@ import java.util.Random;
 
 
 public abstract class HelpOption {
-    private boolean isUsed;
+    private boolean isUsed = false;
 
-    public boolean isUsed() {return isUsed;}
+    public boolean isUsed() {
+        return isUsed;
+    }
 
-    public void setUsed(boolean used) {isUsed = used;}
+    public void setUsed(boolean used) {
+        isUsed = used;
+    }
 
 
-    public abstract List<HelpAnswer> getHelpAnswers(Question question) ;
+    public abstract List<HelpAnswer> getHelpAnswers(Question question);
+
     public abstract void showAnswer(List<HelpAnswer> helpAnswer);
 
 }
