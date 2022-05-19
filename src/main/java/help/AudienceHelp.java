@@ -1,11 +1,11 @@
 package help;
 
 
-import questionAnswer.Answer;
+
 import questionAnswer.Question;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 import java.util.Random;
 
@@ -20,7 +20,7 @@ public class AudienceHelp extends HelpOption {
     }
 
     @Override
-    public List<HelpAnswer> getHelpAnswers(Question question) {
+    public List<HelpAnswer> getHelpAnswers(Question question) throws NullPointerException {
         List<HelpAnswer> helpAnswers = new ArrayList<>();
         helpAnswers.add(new HelpAnswer(question.getCorrectAnswer(), randomPercentage()[0]));
         helpAnswers.add(new HelpAnswer(question.getWrongAnswers().get(0), randomPercentage()[1]));

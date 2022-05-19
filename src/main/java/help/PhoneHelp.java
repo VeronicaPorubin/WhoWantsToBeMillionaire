@@ -13,7 +13,6 @@ public class PhoneHelp extends HelpOption {
   public List<HelpAnswer> getHelpAnswers(Question question) {
         List<HelpAnswer> helpAnswers = new ArrayList<>();
         helpAnswers.add(new HelpAnswer(question.getCorrectAnswer(), 99.9));
-        System.out.println(helpAnswers);
         return helpAnswers;
     }
 @Override

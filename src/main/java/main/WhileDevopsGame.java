@@ -118,8 +118,8 @@ public class WhileDevopsGame {
         return false;
     }
 
-    public Question getQuestionByLevel(int level) throws InvalidLevelException, InvalidScoreException {
-        Question question = null;
+    public Question getQuestionByLevel(int level) throws InvalidLevelException, InvalidScoreException, NullPointerException {
+        Question question=null;
         List<Question> allQuestions = initQuestion();
         for (Question question1 : allQuestions) {
             if (question1.getLevel() == level) {

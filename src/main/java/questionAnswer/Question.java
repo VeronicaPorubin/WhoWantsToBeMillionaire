@@ -28,7 +28,6 @@ public class Question {
     }
 
 
-
     public void setQuestion(String question) {
         this.question = question;
     }
@@ -67,31 +66,16 @@ public class Question {
 
 
     public Answer getVerifyAns(AnswerSequence answerSequence) {
-     //   Answer gameAnswer = null;
-      //  for (Answer ansVerify : answers) {
-      //      if (ansVerify.getOption().equals(answerSequence)) {
-      //          gameAnswer = ansVerify;
-      //      }}
         return (Answer) this.answers.stream().filter(answers -> answers.getOption().equals(answerSequence)).findFirst().get();
     }
-
-
-  //  public Answer getCorrectAnswer() {
-   //     Answer correctAnswer = null;
-   //     for (Answer ans : answers) {
-   //         if (ans.isCorrect()) {
-   //             return ans;
-   //         }
-   //     }
-   //     return correctAnswer;}
 
     public Answer getCorrectAnswer() {
         return this.answers.stream().filter(Answer::isCorrect).findFirst().get();
     }
 
-public List<Answer> getWrongAnswers (){
-    return this.answers.stream().filter(answers ->!answers.isCorrect()).collect(Collectors.toList());
-}
+    public List<Answer> getWrongAnswers() {
+        return this.answers.stream().filter(answers -> !answers.isCorrect()).collect(Collectors.toList());
+    }
 
 }
 
