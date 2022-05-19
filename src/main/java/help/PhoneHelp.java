@@ -17,9 +17,9 @@ public class PhoneHelp extends HelpOption {
         return helpAnswers;
     }
 @Override
-public void showAnswer (List<HelpAnswer> helpAnswer){
-        for (HelpAnswer helpAns: helpAnswer){
-    System.out.println(helpAns.getAnswers().getOption() + ": " + helpAns.getAnswers().getAnswer() + "-------->" + helpAns.getProbability() + "%");}
+public void showAnswer(List<HelpAnswer> helpAnswer) {
+    helpAnswer.forEach(helpAns -> {System.out.println(helpAns.getAnswers().getOption() + ": " +
+            helpAns.getAnswers().getAnswer() + "-------->" + helpAns.getProbability() + "%"); });
 }
 
 }

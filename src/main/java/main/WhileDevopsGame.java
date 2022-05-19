@@ -1,4 +1,5 @@
 package main;
+
 import Exception.InvalidLevelException;
 import Exception.InvalidScoreException;
 import enums.HelpSequence;
@@ -8,6 +9,7 @@ import enums.AnswerSequence;
 import questionAnswer.Question;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class WhileDevopsGame {
     List<Question> allQuestions;
@@ -22,8 +24,6 @@ public class WhileDevopsGame {
         HelpOption fiftyfiftyHelp = new FiftyFiftyHelp();
         HelpOption audienceHelp = new AudienceHelp();
         HelpOption phoneHelp = new PhoneHelp();
-        List<HelpOption> helpOptions = Arrays.asList(fiftyfiftyHelp, audienceHelp, phoneHelp);
-
 
         while (answer && level <= 10) {
             System.out.println("Nivelul: " + level);
@@ -93,12 +93,13 @@ public class WhileDevopsGame {
         }
     }
 
-    private boolean isValidationAnswer(String gamerAnswer) {
+    private boolean isValidationAnswer(String gamerAnswer) throws NullPointerException {
         for (AnswerSequence answerSequence : AnswerSequence.values()) {
             if (answerSequence.name().equals(gamerAnswer)) {
                 return true;
             }
         }
+
         try {
         } catch (IllegalArgumentException e) {
         }

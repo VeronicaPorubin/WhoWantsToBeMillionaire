@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public abstract class HelpOption {
+public abstract class HelpOption implements Invokable{
     private boolean isUsed = false;
 
     public boolean isUsed() {
@@ -18,8 +18,5 @@ public abstract class HelpOption {
     }
 
 
-    public abstract List<HelpAnswer> getHelpAnswers(Question question);
-
-    public abstract void showAnswer(List<HelpAnswer> helpAnswer);
 
 }

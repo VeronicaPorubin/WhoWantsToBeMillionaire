@@ -6,6 +6,7 @@ import enums.AnswerSequence;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Question {
     private String question;
@@ -66,38 +67,31 @@ public class Question {
 
 
     public Answer getVerifyAns(AnswerSequence answerSequence) {
-        Answer gameAnswer = null;
-        for (Answer ansVerify : answers) {
-            if (ansVerify.getOption().equals(answerSequence)) {
-                gameAnswer = ansVerify;
-            }
-        }
-        return gameAnswer;
+     //   Answer gameAnswer = null;
+      //  for (Answer ansVerify : answers) {
+      //      if (ansVerify.getOption().equals(answerSequence)) {
+      //          gameAnswer = ansVerify;
+      //      }}
+        return (Answer) this.answers.stream().filter(answers -> answers.getOption().equals(answerSequence)).findFirst().get();
     }
 
+
+  //  public Answer getCorrectAnswer() {
+   //     Answer correctAnswer = null;
+   //     for (Answer ans : answers) {
+   //         if (ans.isCorrect()) {
+   //             return ans;
+   //         }
+   //     }
+   //     return correctAnswer;}
 
     public Answer getCorrectAnswer() {
-        Answer correctAnswer = null;
-        for (Answer ans : answers) {
-            if (ans.isCorrect()) {
-                return ans;
-            }
-        }
-        return correctAnswer;
+        return this.answers.stream().filter(Answer::isCorrect).findFirst().get();
     }
 
-    public List<Answer> getWrongAnswers() {
-        List<Answer> wrongAnswers = new ArrayList<>();
-        int i = 0;
-        for (Answer ansWrong : answers) {
-            if (!ansWrong.isCorrect()) {
-                wrongAnswers.add(i, ansWrong);
-                i++;
-            }
-        }
-        return wrongAnswers;
-    }
-
+public List<Answer> getWrongAnswers (){
+    return this.answers.stream().filter(answers ->!answers.isCorrect()).collect(Collectors.toList());
+}
 
 }
 

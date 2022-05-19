@@ -14,9 +14,8 @@ public class FiftyFiftyHelp extends HelpOption {
 
     @Override
     public void showAnswer(List<HelpAnswer> helpAnswer) {
-        for (HelpAnswer helpAns : helpAnswer) {
-            System.out.println(helpAns.getAnswers().getOption() + ": " + helpAns.getAnswers().getAnswer() + "-------->" + helpAns.getProbability() + "%");
-        }
+        helpAnswer.forEach(helpAns -> {System.out.println(helpAns.getAnswers().getOption() + ": " +
+                helpAns.getAnswers().getAnswer() + "-------->" + helpAns.getProbability() + "%"); });
     }
 
     @Override
